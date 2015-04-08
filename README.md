@@ -1,5 +1,7 @@
 # Introducing Prescript
-Prescript is a framework for running macros over code that will eventually become javascript. It includes a number of beautiful macros out of the box. These are listed below. Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. This way it works well with other languages and transpilers, including Babel.js. All valid javascript, Typescript, and JSX should work with Prescript without modification in Prescript. When you decide you want to make use of a Prescript macro, just start using it.
+Prescript is a framework for running macros over code that will eventually become javascript. It includes a number of beautiful macros out of the box. These are listed below. 
+
+Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. This way it works well with other languages and transpilers, including Babel.js. All valid javascript, Typescript, and JSX should work with Prescript without modification in Prescript. When you decide you want to make use of a Prescript macro, just start using it - you don't need to make any bold efforts to learn learn and transition to a new language.
 
 ### Bracket free block
 Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. Think Coffeescript, Ruby, or Python.
