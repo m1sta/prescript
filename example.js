@@ -43,8 +43,7 @@ chainExample ->
    data = (data or []).concat(*) = 'first', 'second'
     
    console.log(result) where result = 10
-   console.log(result) where 
-      result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
+   console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
    data = (initial).concat(additional) where
       initial = data or []
       additional = 'first', 'second'
