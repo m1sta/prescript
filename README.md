@@ -16,37 +16,37 @@ Variables are automatically defined. This can be configured to only apply to var
 ### Inline try/catch
 Allows individual expressions to be easily wrapped in a try/catch statement with the catch returning a default value.
 
-### Skinny arrow functions with optional hoisting
+### Skinny arrow functions with optional hoisting (`->`)
 Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where possible. As function declarations they benefit from function hoisting.
 
-### Shorthand function assignment
+### Shorthand function assignment (`obj.prop -> body`)
 Use of an equals sign during function definition and assignment is optional.
 
-### For-of to for-in conversion
+### For-of conversion to capture both key and value (`for key, value of dict`)
 For-of loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared.
 
-### Array sequence and for loop support using `to` keyword
+### Array sequence and for loop support using `to` keyword (`for x of 1 to 5`)
 A list of values in a sequence can be defined using the `to` keyword. The `to` keyword can also be used to define standard for loops.
 
-### Postfix scope blocks
+### Postfix scope blocks using the `where` keyword (`x = a + 10 where a = 5`)
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation.
 
-### IIFE generation
+### IIFE generation (`fn = (a, #b) -> body`)
 Functions declarations containing variables marked with a `#` will be automatically wrapped in a IIFE and closure. Simple IIFEs can also be generated using the `(#) -> expression` syntax
 
-### Asterix based function invocation
+### Asterix based function invocation (`console.log(*) = "Hello World"`)
 The asterix character can be used as a placeholder during function invocation with the eventual value defined using the assignment `=` character.
 
-### Result chaining
+### Result chaining (`JSON.parse(x) >> *.value * 15`)
 The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix characters.
 
 ### Automatic function prefix creation
 The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body.
 
-### Promise function shorthand
+### Promise function shorthand (`get (url) ~>`)
 Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`.
 
-### Existensial check
+### Existensial check (`a.b.c.d?`)
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list.
 
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
