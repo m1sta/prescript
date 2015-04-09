@@ -24,12 +24,6 @@ The words `generator` and `async` will automatically be included as a prefixes t
 ### Promise function shorthand
 Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> resolve(data)`
 
-### Bracket free object literals
-Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in direct assignment or when wrapped in curved brackets `()`. Eg. `dict = a:b, c:d, e:f` or `fn(a:b, c:d)`
-
-### Bracket free arrays
-Lists of comma separated expressions are wrapped in square brackets `[]` when used in direct assignment eg. `list = a, b, c`
-
 ### Shorthand function assignment
 Use of an equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`
 
@@ -44,6 +38,12 @@ Variables are automatically defined. This can be configured to only apply to var
 
 ### Inline try/catch
 Allows individual expressions to be easily wrapped in a try/catch statement with the catch returning a default value. Eg. `try JSON.parse(string) catch undefined`
+
+### Bracket free object literals
+Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in direct assignment or when wrapped in curved brackets `()`. Eg. `dict = a:b, c:d, e:f` or `fn(a:b, c:d)`
+
+### Bracket free arrays
+Lists of comma separated expressions are wrapped in square brackets `[]` when used in direct assignment eg. `list = a, b, c`
 
 ### Result chaining
 The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`
