@@ -13,7 +13,7 @@ Skinny arrow functions are standard functions. They will become function declara
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
 
 ### IIFE generation
-Functions declarations containing variables marked with a `#` will be automatically wrapped in a IIFE and closure. Eg  `fn = (a, #b) -> body`. Simple IIFEs can also be generated using the `(#) -> expression` syntax. 
+Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure si created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> expression` syntax. 
 
 ### Asterix based function invocation
 The asterix character can be used as a placeholder during function invocation with the eventual value defined using the assignment `=` character. Eg.  `console.log(*) = "Hello World"`
