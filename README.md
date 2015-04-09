@@ -34,10 +34,10 @@ Lists of comma separated expressions are wrapped in square brackets `[]` when us
 Use of an equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`
 
 ### For-of conversion to capture both key and value
-For-of loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. Eg. `for(key, value of dict)`
+For-of loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. Eg. `for (key, value of dict)`
 
 ### For loop supports 'to' keyword
-The `to` keyword can be used to define standard for loops. Eg. `for(x = 0 to array.length)`
+The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
 
 ### Automatic variable declaration
 Variables are automatically defined. This can be configured to only apply to variables defined in loop declarations and catch statements.
