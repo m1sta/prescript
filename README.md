@@ -40,7 +40,7 @@ Functions declarations containing variables marked with a `#` will be automatica
 The asterix character can be used as a placeholder during function invocation with the eventual value defined using the assignment `=` character. Eg.  `console.log(*) = "Hello World"`
 
 ### Result chaining
-The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix characters. eg. `score = JSON.parse(x) >> parseInt(*.value) + 12`
+The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix characters. eg. `score = JSON.parse(input) >> parseInt(*.value) + 12`
 
 ### Automatic function prefix creation
 The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body.
