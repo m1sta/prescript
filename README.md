@@ -13,7 +13,7 @@ Skinny arrow functions are standard functions. They will become function declara
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
 
 ### IIFE generation
-Functions declarations containing variables marked with a `#` will be automatically wrapped in a IIFE and closure. Simple IIFEs can also be generated using the `(#) -> expression` syntax. Eg  `fn = (a, #b) -> body`
+Functions declarations containing variables marked with a `#` will be automatically wrapped in a IIFE and closure. Eg  `fn = (a, #b) -> body`. Simple IIFEs can also be generated using the `(#) -> expression` syntax. 
 
 ### Asterix based function invocation
 The asterix character can be used as a placeholder during function invocation with the eventual value defined using the assignment `=` character. Eg.  `console.log(*) = "Hello World"`
@@ -34,7 +34,7 @@ Lists of comma separated expressions are wrapped in square brackets `[]` when us
 Use of an equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`
 
 ### For-of conversion to capture both key and value
-For-of loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. Eg. `for (key, value of dict)`
+For-of loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value of dict)`
 
 ### For loop supports 'to' keyword
 The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
