@@ -11,7 +11,7 @@ dbExample (callback) ->
         
 closureExample ->
     funcs = {}
-    for (i in 1 to 3) funcs[i] = (msg, #i) -> msg + i
+    for (i = 1 to 3) funcs[i] = (msg, #i) -> msg + i
     for (key, value in funcs) console.log(*) = key + ": " + value("I am ")
     list = (#) -> for(i = 1 to 20) if (i < 10) return i
        
