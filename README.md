@@ -10,7 +10,7 @@ Whitespace defined blocks are wrapped in curly brackets `{}` if they were left o
 Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where possible. As function declarations they benefit from function hoisting. Eg. `hoistedFn (params) -> fnBody`
 
 ### Postfix scope blocks using the 'where' keyword
-Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = 5`
+Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
 
 ### IIFE generation
 Functions declarations containing variables marked with a `#` will be automatically wrapped in a IIFE and closure. Simple IIFEs can also be generated using the `(#) -> expression` syntax. Eg  `fn = (a, #b) -> body`
