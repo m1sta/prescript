@@ -34,10 +34,10 @@ For-in loops can be defined to extract both key and value at the same time by pr
 The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
 
 ### Automatic variable declaration
-Variables are automatically defined within the scope that they are first used. This can be configured to only apply to variables defined in loop declarations and catch statements. It is highly recommended to use semantic-colouring in your IDE if you this feature enabled for cover all variables.
+Variables are automatically defined within the scope that they are first used. This can be configured to only apply to variables defined in loop declarations and catch statements. It is highly recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables.
 
 ### Inline try/catch
-Allows individual expressions to be easily wrapped in a try/catch statement with the catch returning a default value. Eg. `try JSON.parse(string) catch undefined`
+Allows individual expressions to be easily wrapped in a try/catch statement with the catch returning a default value. Eg. `try JSON.parse(string) catch {error: 'poorly formed json'}`
 
 ### Bracket free object literals
 Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in direct assignment or when wrapped in curved brackets `()`. Eg. `dict = a:b, c:d, e:f` or `fn(a:b, c:d)`
