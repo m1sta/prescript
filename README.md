@@ -6,12 +6,6 @@ Prescript does its best not to touch any code that does not explicitly match a d
 ### Bracket free block and automatic semi-colon insertion
 Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to.
 
-### Skinny arrow functions with hoisting
-Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where possible. As function declarations they benefit from function hoisting. Eg. `hoistedFn (params) -> fnBody`
-
-### Postfix scope blocks using the 'where' keyword
-Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
-
 ### IIFE generation
 Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure si created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> expression` syntax. 
 
@@ -23,6 +17,12 @@ The words `generator` and `async` will automatically be included as a prefixes t
 
 ### Promise function shorthand
 Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> resolve(data)`
+
+### Skinny arrow functions with hoisting
+Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where possible. As function declarations they benefit from function hoisting. Eg. `hoistedFn (params) -> fnBody`
+
+### Postfix scope blocks using the 'where' keyword
+Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
 
 ### Shorthand function assignment
 Use of an equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`
