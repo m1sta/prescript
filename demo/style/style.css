@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font: inherit;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+html {
+  background: #fff;
+  font: 16px/1.4 Source Sans Pro, sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding-top: 2em;
+  color: #000;
+  border-radius: 3px;
+  -webkit-transition: opacity 0.2s;
+}
+
+.dark-theme {
+  background: #2D323A;
+}
+
+.CodeMirror {
+  color: #535353;
+  width: 100%;
+  height: auto;
+}
+
+.dark-theme .CodeMirror {
+  background: #2D323A;
+}
+
+.CodeMirror-sizer {
+  padding-top: 0px;
+}
+
+.CodeMirror-cursors {
+  z-index: 5 !important;
+}
+

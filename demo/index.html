@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <title>PreScript Mirror</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport"
+        content="width=device-width,
+                initial-scale=1.0,
+                maximum-scale=1.0,
+                user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable"
+        content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"/>
+
+  <link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+
+  <!--
+  ____________________________________
+
+  S T Y L E S H E E T S
+
+  -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="style/codemirror-tweaked.css">
+  <link rel="stylesheet" href="style/theme.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+
+
+
+
+<body class="dark-theme fancy-comments cm-mode-js">
+<div style="overflow-x: node; overflow-y:scroll; height:100%">
+  <div style="float:left; width: 50%">
+    <textarea id="code"></textarea>
+  </div>
+  <div style="float:right; width: 50%; opacity:0.6; ">
+    <textarea id="output"></textarea>
+  </div>
+<div>
+  <!--
+  ____________________________________
+
+  S C R I P T S
+
+  -->
+  
+  <!-- libs -->
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="script/husl.js"></script>
+
+  <!-- CodeMirror -->
+  <script src="script/cm4.1/lib/codemirror.js"></script>
+  <script src="script/cm-semantic-javascript.js"></script>
+  <script src="script/cm4.1/addon/comment/comment.js"></script>
+  <script src="script/cm4.1/keymap/sublime.js"></script>
+
+  <!-- app -->
+  <script src="script/transpile.js"></script>
+  <script src="script/semantic.js"></script>
+  <script src="script/main.js"></script>
+
+</body>
