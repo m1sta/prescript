@@ -13,7 +13,7 @@ Functions declarations containing variables marked with a `#` will be automatica
 The asterix character can be used as a placeholder during function invocation with the eventual value defined using the assignment `=` character. Eg.  `console.log(*) = "Hello World"`
 
 ### Automatic function prefix creation
-The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body.
+The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions.
 
 ### Promise function shorthand
 Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> resolve(data)`
