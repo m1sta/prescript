@@ -1,0 +1,26 @@
+{
+  "name": "prescript",
+  "version": "0.0.1",
+  "description": "A javascript macro framework designed to work with other transpilers and preloaded with some handy syntactic sugar.",
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m1sta/prescript.git"
+  },
+  "keywords": [
+    "macro"
+  ],
+  "author": "m1sta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m1sta/prescript/issues"
+  },
+  "homepage": "https://github.com/m1sta/prescript"
+}
