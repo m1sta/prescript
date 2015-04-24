@@ -47,10 +47,12 @@ miscExamples (input) ->
     {a, b} = {a:123, b:123}
     console.log(a.b.c?) where a = {b:{c:123}}
     $("button").on("click", *) => console.log(this)
-    list = :: 1, 2, 3
-    list = ::
+    table1 =
       1, 2, 3
       4, 5, 6
       7, 8, 9
+    table2 =
+      a:1, b:2, c:3
+      a:4, b:5, c:6
     return {input, output, first, second}
   
