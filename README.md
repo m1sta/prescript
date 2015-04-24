@@ -3,6 +3,8 @@ Prescript is a framework for running macros over code that will eventually becom
 
 Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. This way it works well with other languages and transpilers, including Babel.js. All valid javascript, Typescript, and JSX should work with Prescript without modification in Prescript. When you decide you want to make use of a Prescript macro, just start using it - you don't need to make any bold efforts to learn learn and transition to a new language.
 
+![Example](demo/example1.png)
+
 ### Bracket free block and automatic semi-colon insertion
 Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to.
 
@@ -19,7 +21,7 @@ The words `generator` and `async` will automatically be included as a prefixes t
 Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> if(true) resolve(data) else reject(error: "Error")`
 
 ### Skinny arrow functions with hoisting
-Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where possible. As function declarations they benefit from function hoisting. Eg. `hoistedFn (params) -> fnBody`
+Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where assigned to a variable name in the current scope. As function declarations they benefit from function hoisting. Eg. `hoistedFn = (params) -> fnBody`
 
 ### Postfix scope blocks using the 'where' keyword
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
