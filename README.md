@@ -23,11 +23,11 @@ Functions defined using the tilde-arrow `~>` will automatically be wrapped in a 
 ### Skinny arrow functions with hoisting
 Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where assigned to a variable name in the current scope. As function declarations they benefit from function hoisting. Eg. `hoistedFn = (params) -> fnBody`
 
-### Postfix scope blocks using the 'where' keyword
-Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
-
 ### Shorthand function assignment
 Use of an equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`
+
+### Postfix scope blocks using the 'where' keyword
+Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`
 
 ### For-in conversion to capture both key and value
 For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`
@@ -44,9 +44,6 @@ Allows individual expressions to be easily wrapped in a try/catch statement with
 ### Bracket free object literals
 Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in direct assignment or when wrapped in curved brackets `()`. Eg. `dict = a:b, c:d, e:f` or `fn(a:b, c:d)`
 
-### Result chaining
-The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`
-
 ### Existensial check
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`
 
@@ -62,5 +59,8 @@ let table2 =
     a:1, b:1, c:1
     a:2, b:2, c:2
 ```
+
+### Result chaining
+The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`
 
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
