@@ -48,4 +48,13 @@ The result of one expression can be automatically passed to another expression b
 ### Existensial check
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`
 
+### Block bounded multi-line array definition
+Tables of data can be defined using a shorthand syntax by defining a block during an assignment (`=`). Each line within the block not ending in a comma is considered a new element of a parent array. Lists's of dictionaries can be created using this syntax too  eg.
+
+```
+let list = 
+    "A1", "B1", "C1"
+    "A2", "B2", "C2"
+```
+
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
