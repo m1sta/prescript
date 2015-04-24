@@ -16,7 +16,7 @@ The asterix character can be used as a placeholder during function invocation wi
 The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions.
 
 ### Promise function shorthand
-Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> resolve(data)`
+Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> if(true) resolve(data) else reject(error: "Error")`
 
 ### Skinny arrow functions with hoisting
 Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where possible. As function declarations they benefit from function hoisting. Eg. `hoistedFn (params) -> fnBody`
