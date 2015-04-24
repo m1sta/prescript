@@ -15,13 +15,6 @@ closureExample ->
     for (key, value in funcs) console.log(*) = key + ": " + value("I am unique. I am number ")
     list = (#) -> for(i = 1 to 20) if (i < 10) return i
        
-interpolationExample (input) ->
-    [first, second] = [1, 2]
-    {a, b} = {a:123, b:123}
-    console.log(a.b.c?) where a = {b:{c:123}}
-    $("button").on("click", *) => console.log(this)
-    return {input, output, first, second}
-       
 promiseExample (url) ~>
     req = new XMLHttpRequest()
     req.open('GET', url)
@@ -40,11 +33,24 @@ chainExample ->
    
    console.log(*) = 10
    console.log(*) = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
-   data = (data or []).concat(*) = :: 'first', 'second'
+   data = (data or []).concat(*) = ['first', 'second']
     
    console.log(result) where result = 10
    console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
    data = (initial).concat(additional) where
       initial = data or []
-      additional = :: 'first', 'second'
+      additional = ['first', 'second']
+      
+       
+miscExamples (input) ->
+    [first, second] = [1, 2]
+    {a, b} = {a:123, b:123}
+    console.log(a.b.c?) where a = {b:{c:123}}
+    $("button").on("click", *) => console.log(this)
+    list = :: 1, 2, 3
+    list = ::
+      1, 2, 3
+      4, 5, 6
+      7, 8, 9
+    return {input, output, first, second}
   
