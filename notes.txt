@@ -1,0 +1,12 @@
+name [-=~]> {anything}
+name [-=~]> anything [;\n]
+(anything) [-=~]> {anything}
+(anything) [-=~]> anything [;\n]
+
+for (name = name to name)
+
+try anything catch anything [;\n]
+
+asterix equals
+arrows
+IIFE
