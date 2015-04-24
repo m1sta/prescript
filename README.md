@@ -52,9 +52,13 @@ Deep properties of an object can be extracted without fear of `cannot read prope
 Tables of data can be defined using a shorthand syntax by defining a block during an assignment (`=`). Each line within the block not ending in a comma is considered a new element of a parent array. Lists's of dictionaries can be created using this syntax too  eg.
 
 ```
-let list = 
+let table1  = 
     "A1", "B1", "C1"
     "A2", "B2", "C2"
+    
+let table2 = 
+    a:1, b:1, c:1
+    a:2, b:2, c:2
 ```
 
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
