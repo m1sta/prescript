@@ -27,32 +27,30 @@ promiseExample (url) ~>
 iteratorExample ->
    yield i++
 
-chainExample ->
-   setTimeout(*, 1000) -> console.log("First")
-   setTimeout(*, 1000) = () -> console.log("Second")
-   
-   console.log(*) = 10
-   console.log(*) = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
-   data = (data or []).concat(*) = ['first', 'second']
-    
-   console.log(result) where result = 10
-   console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
-   data = (initial).concat(additional) where
-      initial = data or []
-      additional = ['first', 'second']
-      
-       
-miscExamples (input) ->
-    [first, second] = [1, 2]
-    {a, b} = {a:123, b:123}
-    console.log(a.b.c?) where a = {b:{c:123}}
-    $("button").on("click", *) => console.log(this)
-    table1 =
-      1, 2, 3
-      4, 5, 6
-      7, 8, 9
-    table2 =
-      a:1, b:2, c:3
-      a:4, b:5, c:6
-    return {input, output, first, second}
+miscExamples ->
+	setTimeout(*, 1000) -> console.log("First")
+	setTimeout(*, 1000) = () -> console.log("Second")
+
+	console.log(*) = 10
+	console.log(*) = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
+	data = (data or []).concat(*) = ['first', 'second']
+
+	console.log(result) where result = 10
+	console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
+	data = (initial).concat(additional) where
+	  initial = data or []
+	  additional = ['first', 'second']
+
+	[first, second] = [1, 2]
+	{a, b} = {a:123, b:123}
+	console.log(a.b.c?) where a = {b:{c:123}}
+	$("button").on("click", *) => console.log(this)
+	table1 =
+	  1, 2, 3
+	  4, 5, 6
+	  7, 8, 9
+	table2 =
+	  a:1, b:2, c:3
+	  a:4, b:5, c:6
+	return {input, output, first, second}
   
