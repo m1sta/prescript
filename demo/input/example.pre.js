@@ -55,7 +55,7 @@ miscExamples ->
 	return {input, output, first, second}
   
 annotationExample ->
-	annotate this
+	annotate //?
 	    desc: "Bla bla etc"
 	    input:
 	       enableAsync: (type: boolean, desc: "Example")
