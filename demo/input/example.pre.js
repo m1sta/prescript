@@ -5,7 +5,7 @@ dbExample (callback) ->
       resultString = await db.get(id: 123)
       resultJSON = try JSON.parse(resultString) catch resultString
   catch (err)
-      if (err.status !== 409) throw err
+      if (err.status !== 409) throw err`
   finally
       callback(err, resultJSON)
         

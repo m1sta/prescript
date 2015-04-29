@@ -1,0 +1,6 @@
+if(false){
+	return 123
+}
+if(true)
+   console.log("hel\"lo")
+   console.log("done")
