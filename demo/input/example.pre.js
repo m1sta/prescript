@@ -54,3 +54,11 @@ miscExamples ->
 	  a:4, b:5, c:6
 	return {input, output, first, second}
   
+annotationExample ->
+	annotate this
+	    desc: "Bla bla etc"
+	    input:
+	       enableAsync: (type: boolean, desc: "Example")
+	       url: (type: string, desc: "Example")
+	    output:
+	       type: string
