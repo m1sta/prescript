@@ -30,17 +30,17 @@ iteratorExample ->
 miscExamples ->
 	setTimeout(*, 1000) -> console.log("First")
 	setTimeout(*, 1000) = () -> console.log("Second")
-
+	
 	console.log(*) = 10
 	console.log(*) = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
 	data = (data or []).concat(*) = ['first', 'second']
-
+	
 	console.log(result) where result = 10
 	console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
 	data = (initial).concat(additional) where
 	  initial = data or []
 	  additional = ['first', 'second']
-
+	
 	[first, second] = [1, 2]
 	{a, b} = {a:123, b:123}
 	console.log(a.b.c?) where a = {b:{c:123}}
