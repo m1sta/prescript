@@ -44,7 +44,7 @@ miscExamples ->
 	[first, second] = [1, 2]
 	{a, b} = {a:123, b:123}
 	console.log(a.b.c?) where a = {b:{c:123}}
-	$("button").on("click", *) => console.log(this)
+	$("button").on("click", *) => console.log(this) 
 	table1 =
 	  1, 2, 3
 	  4, 5, 6
