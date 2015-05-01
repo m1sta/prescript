@@ -5,4 +5,5 @@ if(true)
    console.log("hel\"lo")
    console.log("done")
 
-some -> somethingElse()
+bla (a, b) ~>
+   react(stuff, *) = super
