@@ -1,3 +1,8 @@
+"string"
+<html>
+/* comment //asf/a/afsda\\*
+
+sdfs */
 if(false){
 	return 123
 }
