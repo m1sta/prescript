@@ -1,4 +1,8 @@
-->
-   first
-   second
-done
+first
+    second
+    third
+        fourth
+    fifth
+        sixth
+seventh
+last;
