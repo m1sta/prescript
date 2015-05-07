@@ -1,3 +1,12 @@
+//algerbraic expression to ast structure
+
+deferred const a = 10
+deferred var b, c, d;
+
+let constraints = []
+constraints.push(a * b + y > 10 * x)
+constraints.push(a > x + y)
+
 name [-=~]> {anything}
 name [-=~]> anything [;\n]
 (anything) [-=~]> {anything}
