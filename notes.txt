@@ -1,23 +1,26 @@
-//straight from ts
-type callback = (error: boolean, result: string) => number;
+//learn a little from typescript, sweet.js, and es6 tags
+type callback = (error: boolean, result: string) => number
 macro graph = (exp:string) => exp
 
-//algerbraic expression to ast structure
-defer a, b, x, y
-constraints = []
-constraints.push(a * b + y > 10 * x)
-constraints.push(a > x + y)
-
-//string expression
+//string expression : last two tokens in block must be colon (:) and macro
 constraints.push(a * b + y : string)
 constraints.push(a -> b : graph)
-constraints.push(placeholder : graph) where placeholder =: 
+constraints.push(placeholder : graph) where placeholder =
    a -> b
    b -> c
 constraint : string = (a * b + hello)
 query : sql = (select * from db where x is null)
 
+type dbQuery = {query:sql, params:[any]}
+db.query(*) = query: (select * from table), params: [1,2,3]
+
 var x = 2 ** 2 //Math.pow() 
+
+//alternative is to have algerbraic expression output to ast object literal, string, or function
+defer a, b, x, y
+constraints = []
+constraints.push(a * b + y > 10 * x)
+constraints.push(a > x + y)
 
 name [-=~]> {anything}
 name [-=~]> anything [;\n]
