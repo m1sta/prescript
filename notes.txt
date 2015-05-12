@@ -1,11 +1,21 @@
+//straight from ts
+type callback = (error: boolean, result: string) => number;
+macro graph = (exp:string) => exp
+
 //algerbraic expression to ast structure
-
-deferred const a = 10
-deferred var b, c, d;
-
-let constraints = []
+defer a, b, x, y
+constraints = []
 constraints.push(a * b + y > 10 * x)
 constraints.push(a > x + y)
+
+//string expression
+constraints.push(a * b + y : string)
+constraints.push(a -> b : graph)
+constraints.push(placeholder : graph) where placeholder =: 
+   a -> b
+   b -> c
+constraint : string = (a * b + hello)
+query : sql = (select * from db where x is null)
 
 var x = 2 ** 2 //Math.pow() 
 
