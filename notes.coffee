@@ -20,6 +20,8 @@ constraints.push(graph :: placeholder) where placeholder =
 constraint :: string = a * b + hello
 query :: sql = select * from db where x is null
 
+//question: should always put after expression to make parsing of dictionary literal easier?
+
 var x = 2 ** 2 //Math.pow() 
 default const
 
