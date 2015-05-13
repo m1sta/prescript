@@ -1,7 +1,7 @@
 #support typescript-like type annotations and tag/macro-like string expressions
 type callback = (error: boolean, result: string) => number
 dsl graph = (input) => input
-inline template = (input) => input
+inline formula = (input) => input
 tag = (input) => input
 
 #dsl macros run at compile time and then optionally can get access to runtime params if the macro dev outputs a function
