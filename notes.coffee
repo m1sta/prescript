@@ -23,3 +23,15 @@ query :: sql = select * from db where x is null
 #question: should always put after expression to make parsing of dictionary literal easier?
 var x = 2 ** 2 //Math.pow() 
 default const
+
+
+type callback  = (err: boolean, result: string) -> void
+
+graph = graph :: a -> b
+constraint = eq :: a + b ** 2
+username = "Domenic Denicola";
+tag = "& is a fun tag";
+macro require -> arguments[0].split(",").map(token) -> string :: "var ${token} = require(${token})"
+html (strings, values...) -> return output where for(i,s in strings) output += s + encodeURIComponent(values[i])
+console.log(html :: <b>${username} says</b>: ${tag})
+require :: express, esprima, redis
