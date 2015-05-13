@@ -1,20 +1,27 @@
-//learn a little from typescript, sweet.js, and es6 tags
+//support typescript-like type annotations and tag/macro-like string expressions
 type callback = (error: boolean, result: string) => number
-macro graph = (exp:string) => exp
+dsl graph = (input) => input
+inline template = (input) => input
+tag = (input) => input
 
-//string expression : last two tokens in block must be colon (:) and macro
-constraints.push(a * b + y : string)
-constraints.push(a -> b : graph)
-constraints.push(placeholder : graph) where placeholder =
+//dsl macros run at compile time and then optionally can get access to runtime params if the macro dev outputs a function
+//inline macros are functions that will be inlined for execution at runtime
+//if a macro name does not match but a function has been defined just define like a tag
+
+//string expression with processing function defined as expression prefix
+constraints.push(formula :: a * b + y) // function(e){body}("a * b + y")
+constraints.push(graph :: a -> b)
+constraints.push(*) = graph :: a -> b
+constraints.push(graph :: placeholder) where placeholder = 
    a -> b
    b -> c
-constraint : string = (a * b + hello)
-query : sql = (select * from db where x is null)
 
-type dbQuery = {query:sql, params:[any]}
-db.query(*) = query: (select * from table), params: [1,2,3]
+//string expression with processing function defined as variable suffix
+constraint :: string = a * b + hello
+query :: sql = select * from db where x is null
 
 var x = 2 ** 2 //Math.pow() 
+default const
 
 //alternative is to have algerbraic expression output to ast object literal, string, or function
 defer a, b, x, y
