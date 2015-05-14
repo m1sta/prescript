@@ -13,7 +13,7 @@ closureExample ->
     funcs = {}
     for (i = 1 to 3) funcs[i] = (msg, #i) -> msg + i
     for (key, value in funcs) console.log(*) = key + ": " + value("I am unique. I am number ")
-    list = (#) -> for(i = 1 to 20) if (i < 10) return i
+    list = (#) -> for(i = 1 to 20) if (i < 10) yield i #IIFE generator functions will all into an array
        
 promiseExample (url) ~>
     req = new XMLHttpRequest()
@@ -72,4 +72,4 @@ macros ->
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2)
 	console.log(*) = jsx :: <b>{username} says</b>: {message}
-	console.log(*) = i8n :: "Hello {{username}}" //quotes are optional
+	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
