@@ -63,7 +63,7 @@ miscExamples ->
 	return {input, output, first, second}
 
 macros ->
-	macro require -> arguments[0].split(",").map(token) -> string :: "var ${token} = require(${token})"
+	macro require -> arguments[0].split(",").map(token) -> `var ${token} = require(${token})\n`
 	tag graph, formula = (strings, values) -> strings.join("")
 	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
 	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
