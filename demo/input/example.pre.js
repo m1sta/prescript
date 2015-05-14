@@ -45,20 +45,27 @@ miscExamples ->
 	{a, b} = {a:123, b:123}
 	console.log(a.b.c?) where a = {b:{c:123}}
 	$("button").on("click", *) => console.log(this) 
+
+	default const
+	let x = 2 ** 2
+
 	table1 =
 	  1, 2, 3
 	  4, 5, 6
 	  7, 8, 9
+
 	table2 =
 	  a:1, b:2, c:3
 	  a:4, b:5, c:6
 	return {input, output, first, second}
-  
-annotationExample ->
-	annotate //?
-	    desc: "Bla bla etc"
-	    input:
-	       enableAsync: (type: boolean, desc: "Example")
-	       url: (type: string, desc: "Example")
-	    output:
-	       type: string
+
+macrosTagsAndCallbackTypes ->
+	type callback = (err: boolean, result: string) -> void
+	macro require -> arguments[0].split(",").map(token) -> string :: "var ${token} = require(${token})"
+	tag html (strings, values...) -> output where for(i,s in strings) output += s + encodeURIComponent(values[i])
+	tag graph = tag formula = (strings, values...) -> strings.join("")
+
+	require :: express, esprima, redis
+	graph = graph :: a -> b
+	constraints.push(formula :: a + b ** 2)
+	console.log(*) = html :: <b>${username} says</b>: ${tag}
