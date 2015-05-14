@@ -13,7 +13,7 @@ iifeExample ->
     funcs = {}
     for (i = 1 to 3) funcs[i] = (msg, #i) -> msg + i
     for (key, value in funcs) console.log(*) = key + ": " + value("I am unique. I am number ")
-    list = (#) -> for(i = 1 to 20) if (i < 10) yield i #IIFE generator functions will all into an array
+    list = (#) -> for(i = 1 to 20) if (i < 10) yield i #IIFE generator functions will be flushed into an array
        
 promiseExample (url) ~>
     req = new XMLHttpRequest()
