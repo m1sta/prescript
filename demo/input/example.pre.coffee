@@ -49,6 +49,7 @@ miscExamples ->
 
 	default const
 	let x = 2 ** 2
+	type callback = (err:boolean, result:any) -> void
 
 	table1 =
 	  1, 2, 3
@@ -58,6 +59,7 @@ miscExamples ->
 	table2 =
 	  a:1, b:2, c:3
 	  a:4, b:5, c:6
+	  
 	return {input, output, first, second}
 
 macros ->
