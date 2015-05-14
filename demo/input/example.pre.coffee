@@ -9,7 +9,7 @@ dbExample (callback) ->
   finally
       callback(err, resultJSON)
         
-closureExample ->
+iifeExample ->
     funcs = {}
     for (i = 1 to 3) funcs[i] = (msg, #i) -> msg + i
     for (key, value in funcs) console.log(*) = key + ": " + value("I am unique. I am number ")
@@ -71,5 +71,5 @@ macros ->
 	require :: express, esprima, redis
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2)
-	console.log(*) = jsx :: <b>{username} says</b>: {message}
+	console.log(*) = jsx :: <b>{username} says</b>: {message} #this isn't valid jsx, but you get the idea
 	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
