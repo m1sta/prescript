@@ -5,7 +5,7 @@ dbExample (callback) ->
       resultString = await db.get(id: 123)
       resultJSON = try JSON.parse(resultString) catch resultString
   catch (err)
-      if (err.status !== 409) throw err`
+      if (err.status !== 409) throw err
   finally
       callback(err, resultJSON)
         
@@ -61,7 +61,7 @@ miscExamples ->
 
 macrosTagsAndCallbackTypes ->
 	type callback = (err: boolean, result: string) -> void
-	macro require -> arguments[0].split(",").map(token) -> string :: "var ${token} = require(${token})"
+	macro require -> arguments[0].split(",").map(token) -> `var ${token} = require(${token})\n`
 	tag html (strings, values...) -> output where for(i,s in strings) output += s + encodeURIComponent(values[i])
 	tag graph = tag formula = (strings, values...) -> strings.join("")
 
