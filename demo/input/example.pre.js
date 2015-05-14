@@ -70,5 +70,5 @@ macrosTagsAndCallbackTypes ->
 	require :: express, esprima, redis
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2)
-	console.log(*) = jsx :: <b>{username} says</b>: {tag}
+	console.log(*) = jsx :: <b>{username} says</b>: {message}
 	console.log(*) = i8n :: "Hello {{username}}" //quotes are optional
