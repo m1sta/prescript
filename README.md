@@ -21,7 +21,7 @@ Skinny arrow functions are standard functions. They will become function declara
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. The asterix character when combined with equals sign provides a simpler anonymous form of this Eg.  `console.log(*) = "Hello World"`
 
 ### Automatic variable declaration
-Variables can be set to automatically be defined within the scope that they are first used, using either var, let, or const. This can be configured to only apply to variables defined in loop declarations and catch statements. It is highly recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables.
+Variables can be set to automatically be defined within the scope that they are first used, using either var, let, or const. This can be configured to only apply to variables defined in loop declarations and catch statements. It is highly recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables. Eg. `default const`
 
 ### Block bounded multi-line array definition
 Tables of data can be defined using a shorthand syntax by defining a block during an assignment (`=`). Each line within the block not ending in a comma is considered a new element of a parent array. Lists's of dictionaries can be created using this syntax too  eg.
