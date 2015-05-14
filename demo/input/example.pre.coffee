@@ -63,7 +63,7 @@ macrosTagsAndCallbackTypes ->
 	type callback = (err: boolean, result: string) -> void
 	macro require -> arguments[0].split(",").map(token) -> `var ${token} = require(${token})\n`
 	tag html (strings, values...) -> output where for(i,s in strings) output += s + encodeURIComponent(values[i])
-	tag graph = tag formula = (strings, values...) -> strings.join("")
+	tag graph, formula = (strings, values...) -> strings.join("")
 
 	require :: express, esprima, redis
 	graph = graph :: a -> b
