@@ -45,8 +45,8 @@ Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in d
 ### Existensial check
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`
 
-### Macros / DSL support
-Macros and string template tags with user defined token delineators can be defined too with the result looking like Eg. `constraints.push(graph :: a -> b). Check [here](demo/input/example.pre.coffee) for more examples.
+### Simple Macro / DSL support
+Macros and string template tags with user defined token delineators can be defined too with the result looking like Eg. `constraints.push(graph :: a <-> b <-> c). Check [here](demo/input/example.pre.coffee) for more examples.
 
 ### For-in conversion to capture both key and value
 For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`
