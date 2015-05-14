@@ -34,6 +34,7 @@ miscExamples ->
 	console.log(*) = 10
 	console.log(*) = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
 	data = (data or []).concat(*) = ['first', 'second']
+	doubles = singles.map(token) -> token * 2
 	
 	console.log(result) where result = 10
 	console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
@@ -61,11 +62,13 @@ miscExamples ->
 
 macrosTagsAndCallbackTypes ->
 	type callback = (err: boolean, result: string) -> void
-	macro require -> arguments[0].split(",").map(token) -> `var ${token} = require(${token})\n`
-	tag html (strings, values...) -> output where for(i,s in strings) output += s + encodeURIComponent(values[i])
-	tag graph, formula = (strings, values...) -> strings.join("")
+	macro require -> arguments[0].split(",").map(token) -> string :: "var ${token} = require(${token})"
+	tag graph, formula = (strings, values) -> strings.join("")
+	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
+	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
 
 	require :: express, esprima, redis
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2)
-	console.log(*) = html :: <b>${username} says</b>: ${tag}
+	console.log(*) = jsx :: <b>{username} says</b>: {message}
+	console.log(*) = i8n :: "Hello {{username}}" //quotes are optional
