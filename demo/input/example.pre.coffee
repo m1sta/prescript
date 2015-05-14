@@ -60,8 +60,7 @@ miscExamples ->
 	  a:4, b:5, c:6
 	return {input, output, first, second}
 
-macrosTagsAndCallbackTypes ->
-	type callback = (err: boolean, result: string) -> void
+macros ->
 	macro require -> arguments[0].split(",").map(token) -> string :: "var ${token} = require(${token})"
 	tag graph, formula = (strings, values) -> strings.join("")
 	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
