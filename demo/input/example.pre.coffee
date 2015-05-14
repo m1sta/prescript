@@ -34,7 +34,6 @@ miscExamples ->
 	console.log(*) = 10
 	console.log(*) = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
 	data = (data or []).concat(*) = ['first', 'second']
-	doubles = singles.map(token) -> token * 2
 	
 	console.log(result) where result = 10
 	console.log(result) where result = await db.get('key') >> JSON.parse(*) >> parseInt(*.value)
@@ -50,6 +49,7 @@ miscExamples ->
 	default const
 	let x = 2 ** 2
 	type callback = (err:boolean, result:any) -> void
+	doubles = singles.map(token) -> token * 2
 
 	table1 =
 	  1, 2, 3
