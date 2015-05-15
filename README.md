@@ -9,7 +9,7 @@ Prescript does its best not to touch any code that does not explicitly match a d
 Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to.
 
 ### IIFE generation
-Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure is created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> expression` syntax. 
+Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure is created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> doImmediatley()` syntax. Simple generator IIFEs will automatically flush to an array Eg. `(#) -> for(x = 0 to 10) yield x`.
 
 ### Automatic function prefix creation and promise function shorthand
 The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> if(true) resolve(data) else reject("Error")`
