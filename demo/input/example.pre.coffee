@@ -44,7 +44,7 @@ miscExamples ->
 	[first, second] = [1, 2]
 	{a, b} = {a:123, b:123}
 	console.log(a.b.c?) where a = {b:{c:123}}
-	param? = 10 #equivalent to param = param == undefined ? 10 : param
+	param ?= 10 #equivalent to param = param == undefined ? 10 : param
 	$("button").on("click", *) => console.log(this) 
 
 	default const
