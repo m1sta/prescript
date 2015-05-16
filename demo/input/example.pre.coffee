@@ -64,7 +64,8 @@ miscExamples ->
 	return {input, output, first, second}
 
 macros ->
-	macro require -> arguments[0].split(",").map(token) -> `var ${token} = require(${token})\n`
+	#the only difference between macros and tags are that macros run at compile time
+	macro require = (strings) -> strings[0].split(",").map(token) -> `var ${token} = require(${token})\n`
 	tag graph, formula = (strings, values) -> strings.join("")
 	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
 	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
@@ -72,5 +73,5 @@ macros ->
 	require :: express, esprima, redis
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2)
-	console.log(*) = jsx :: <b>{username} says</b>: {message} #this isn't valid jsx, but you get the idea
+	console.log(*) = jsx :: <span><b>{username} says</b>: {message}</span>
 	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
