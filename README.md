@@ -28,7 +28,7 @@ Variables can be set to automatically be defined within the scope that they are 
 ### Block bounded multi-line array definition
 Tables of data can be defined using a shorthand syntax by defining a block during an assignment (`=`). Each line within the block not ending in a comma is considered a new element of a parent array. Lists's of dictionaries can be created using this syntax too  eg.
 
-```
+```coffeescript
 let table1  = 
     "A1", "B1", "C1"
     "A2", "B2", "C2"
@@ -50,7 +50,22 @@ Deep properties of an object can be extracted without fear of `cannot read prope
 ### Basic Macro / DSL support
 Macros and string template tags with user defined token delineators can be defined with the result looking like Eg. `db.add(graph :: a <-> b <-> c). Check [here](demo/input/example.pre.coffee) for more examples.
 
-### For-in conversion to capture both key and value and for loop support for 'to' keywprd
+```coffeescript
+macroExample ->
+	#the only difference between macros and tags are that macros run at compile time
+	macro require = (strings) -> strings[0].split(",").map(token) -> `var ${token} = require(${token})\n`
+	tag graph, formula = (strings, values) -> strings.join("")
+	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
+	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
+
+	require :: express, esprima, redis
+	graph = graph :: a -> b
+	constraints.push(formula :: a + b ** 2)
+	console.log(*) = jsx :: <span><b>{username} says</b>: {message}</span>
+	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
+```
+
+### For loops accessing both key and value, and a 'to' keyword for ranges
 For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`. The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
 
 ### Result chaining
