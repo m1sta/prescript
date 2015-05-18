@@ -48,7 +48,7 @@ Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in d
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`. A new `?=` operator sets variables to a value only if that variable is not currently `undefined` Eg. `myArg ?= 10`.
 
 ### Basic Macro / DSL support
-Macros and string template tags with user defined token delineators can be defined with the result looking like Eg. `db.add(graph :: a <-> b <-> c). Check [here](demo/input/example.pre.coffee) for more examples.
+Macros and string template tags can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below as well as the `::` operator to provide a clear indication on the use of a macro-supported dsl. Integration of macros and types is being considered for the future.
 
 ```coffeescript
 macroExample ->
