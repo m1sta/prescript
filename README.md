@@ -17,7 +17,7 @@ oneToTen = (#) -> for(x = 1 to 10) yield x`
 ```
 
 ### Automatic function prefix creation and promise function shorthand
-The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(body)`. eg.`get (url) ~> if(true) resolve(data) else reject("Error")`
+The words `generator` and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(function(resove,reject){})`. eg.`get (url) ~> if(true) resolve(data) else reject("Error")`
 
 ### Hoisted arrow functions, function assignment shorthand, and skinny arrows
 Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where assigned to a variable name in the current scope. As function declarations they benefit from function hoisting. Eg. `hoistedFn = (params) -> fnBody`. Use of the equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`. Shorthand can also be used when passing an anonymous function as an argument during function invocation, if the arguments to the anonymous function have not yet been declared in scope Eg. `doubles = singles.map(token) -> token * 2`.
