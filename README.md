@@ -29,7 +29,7 @@ Code blocks to be run immediatley before an assignment or function invocation ca
 Variables can be set to automatically be defined within the scope that they are first used, using either var, let, or const. This can be configured to only apply to variables defined in loop declarations and catch statements. It is recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables. Eg. `default const`
 
 ### Block bounded multi-line array definition
-Tables of data can be defined using a shorthand syntax by defining a block during an assignment (`=`). Each line within the block not ending in a comma is considered a new element of a parent array. Lists's of dictionaries can be created using this syntax too  eg.
+Tables of data can be defined using a shorthand syntax by defining a block after an assignment (`=`). Each line within the block *not ending in a comma* is considered a new element of a parent array. Lists's of dictionaries can be created using this syntax too  eg.
 
 ```coffeescript
 let table1  = 
