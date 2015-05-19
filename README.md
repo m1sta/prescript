@@ -3,7 +3,7 @@ Prescript is a framework for running macros over code that will eventually becom
 
 **[View an example of code written with the out-of-the-box PreScript Macro's here.](demo/input/example.pre.coffee)**. 
 
-Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. This way it works well with other languages and transpilers, including Babel.js. All valid javascript, Typescript, and JSX should work with Prescript without modification in Prescript. When you decide you want to make use of a Prescript macro, just start using it - you don't need to make any bold efforts to learn learn and transition to a new language.
+Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. Any valid javascript is acceptable in a prescript file without modification. When you decide you want to make use of a Prescript macro, just start using them, one at a time - you don't need to make any bold efforts to learn learn and transition to a new language.
 
 ![Example](demo/example1.png)
 
@@ -54,13 +54,14 @@ Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in d
 ### Existensial check and conditional assignment
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`. A new `?=` operator sets variables to a value only if that variable is not currently `undefined` Eg. `myArg ?= 10`.
 
-### Basic Macro / DSL support
-Macros and string template tags can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below as well as the `::` operator to provide a clear indication on the use of a macro-supported dsl. Integration of macros and types is being considered for the future.
+### Types, Tags, and Simple Macros
+Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below as well as the `::` operator in the example below. The `::` operator can also be used for expression typecasting with a static type checker Eg. `x = number :: getResult()` . Standard typescript/flow-style types can be defined using the standard type syntax Eg. `type callback = (error:boolean, result:string) -> void`.
+
 
 ```coffeescript
 macroExample ->
 	#the only difference between macros and tags are that macros run at compile time
-	macro require = (strings) -> strings[0].split(",").map(token) -> `var ${token} = require(${token})\n`
+	macro require = (strings) -> strings[0].split(",").map(token) -> string ::`var ${token} = require(${token})\n`
 	tag graph, formula = (strings, values) -> strings.join("")
 	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
 	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
@@ -77,8 +78,5 @@ For-in loops can be defined to extract both key and value at the same time by pr
 
 ### Result chaining
 The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`
-
-### Optional flow and typescript compatible types
-Types can be defined just like in typescript or flow Eg. `type callback = (error:boolean, result:string) => void`.
 
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
