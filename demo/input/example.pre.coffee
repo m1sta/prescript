@@ -75,3 +75,7 @@ macros ->
 	constraints.push(formula :: a + b ** 2)
 	console.log(*) = jsx :: <span><b>{username} says</b>: {message}</span>
 	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
+	
+	import {sql, promisify} from 'utils'
+	query = sql :: select * from table where criteria = true
+	result = await promisify :: http.get(url) #macro to promisify an async function with the err, result callback
