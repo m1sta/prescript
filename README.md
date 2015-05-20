@@ -55,8 +55,7 @@ Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in d
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`. A new `?=` operator sets variables to a value only if that variable is not currently `undefined` Eg. `myArg ?= 10`.
 
 ### Types, Tags, and Simple Macros
-Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below as well as the `::` operator in the example below. The `::` operator can also be used for expression typecasting with a static type checker Eg. `x = number :: getResult()` . Standard typescript/flow-style types can be defined using the standard type syntax Eg. `type callback = (error:boolean, result:string) -> void`.
-
+Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below as well as the `::` operator in the example below. The `::` operator can also be used for expression typecasting with a static type checker Eg. `x = number :: getResult()` . 
 
 ```coffeescript
 macroExample ->
@@ -71,7 +70,11 @@ macroExample ->
 	constraints.push(formula :: a + b ** 2)
 	console.log(*) = jsx :: <span><b>{username} says</b>: {message}</span>
 	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
+	
+	query = sql :: select * from table1
+	result = await promisify :: http.request(options)
 ```
+An important additional benefit of the `::` operator is that it can be used by IDEs and static processors to help identify how to colour and validate embedded non-javascript syntax (think of it a little like a file extension but for a string expression). Where necessary, typescript/flow-style types can be defined using the standard type syntax Eg. `type callback = (error:boolean, result:string) -> void`.
 
 ### For loops accessing both key and value, and a 'to' keyword for ranges
 For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`. The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
