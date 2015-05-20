@@ -71,6 +71,7 @@ macroExample ->
 	console.log(*) = jsx :: <span><b>{username} says</b>: {message}</span>
 	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
 	
+	import {sql, promisify} from 'utils'
 	query = sql :: select * from table1
 	result = await promisify :: http.request(options)
 ```
