@@ -17,15 +17,14 @@ oneToTen = (#) -> for(x = 1 to 10) yield x
 ```
 
 ### Automatic function prefix creation and promise function shorthand
-The `*` (the generator function marker) and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(function(resove,reject){})`.  eg.
+The `*` (the generator function marker) and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(function(resove,reject){})`. eg.
 
 ```coffeescript
 get (url) ~> if(true) resolve(data) else reject("Error")
 ```
-While `resolve` and `reject` logically end up replacing `return` you should think of them like `arguments` or `this`, they're always there in partiular contexts with a consistent meaning, but you can assign them to other variables if required
 
 ### Hoisted arrow functions, function assignment shorthand, and skinny arrows
-Skinny arrow functions are standard functions. They will become function declarations instead of function expressions where assigned to a variable name in the current scope. As function declarations they benefit from function hoisting. Eg. `hoistedFn = (params) -> fnBody`. Use of the equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`. Shorthand can also be used when passing an anonymous function as an argument during function invocation too. Any arguments to the anonymous function have not yet been declared will be considered parameters for the new anonymous function Eg. `doubles = singles.map(token) -> token * 2`.
+Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. The shorthand function declaration feature means that use of the equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`. Shorthand can also be used when passing an anonymous function as arguments during function invocation too Eg. `doubles = singles.map(token) -> token * 2`. Any arguments to the anonymous function that have not yet been declared will be considered parameters for the new anonymous function.
 
 ### Postfix scope blocks using asterix and where
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. The asterix character when combined with equals sign provides a simpler anonymous form of this Eg.  `console.log(*) = "Hello World"`
@@ -82,6 +81,9 @@ An important additional benefit of the `::` operator is that it can be used by I
 For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`. The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
 
 ### Result chaining
-The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`
+The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`.
+
+### Expect keyword
+The `expect` keyword has been proposed to define a block structure containing information relevant at development time. This includes function parameter types, function return types, and textual descriptions of actions, and tests themselves. This feature is not currently in development but is being considered.
 
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
