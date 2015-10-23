@@ -23,7 +23,7 @@ The `*` (the generator function marker) and `async` will automatically be includ
 get (url) ~> if(true) resolve(data) else reject("Error")
 ```
 
-### Hoisted arrow functions, function assignment shorthand, and skinny arrows
+### Skinny arrows, hoisting, and function assignment shorthand
 Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. The shorthand function declaration feature means that use of the equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`. Shorthand can also be used when passing an anonymous function as arguments during function invocation too Eg. `doubles = singles.map(token) -> token * 2`. Any arguments to the anonymous function that have not yet been declared will be considered parameters for the new anonymous function.
 
 ### Postfix scope blocks using asterix and where
