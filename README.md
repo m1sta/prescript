@@ -54,8 +54,8 @@ Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in d
 ### Existensial check and conditional assignment
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`. A new `?=` operator sets variables to a value only if that variable is not currently `undefined` Eg. `myArg ?= 10`.
 
-### Types, Tags, and Simple Macros
-Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below as well as the `::` operator in the example below. The `::` operator can also be used for expression typecasting with a static type checker Eg. `x = number :: getResult()` . 
+### Cast operator for tags, macros, and embedded dsls
+Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below which are used to define a tag or macro, and the cast operator `::` in the example below. The `::` operator can also be used for expression typecasting with a static type checker like Flow or Typescript Eg. `x = number :: getResult()` . 
 
 ```coffeescript
 macroExample ->
