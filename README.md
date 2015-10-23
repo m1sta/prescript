@@ -11,7 +11,7 @@ Prescript does its best not to touch any code that does not explicitly match a d
 Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to.
 
 ### IIFE generation
-Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure is created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> doImmediatley()` syntax. Simple generator IIFEs will automatically flush to an array Eg. 
+Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure is created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> doImmediately()` syntax. Simple generator IIFEs (ie. those that use the `yield` keyword) will automatically flush to an array Eg. 
 ```coffeescript
 oneToTen = (#) -> for(x = 1 to 10) yield x`
 ```
