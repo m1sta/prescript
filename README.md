@@ -13,7 +13,7 @@ Whitespace defined blocks are wrapped in curly brackets `{}` if they were left o
 ### IIFE generation
 Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure is created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> doImmediately()` syntax. Simple generator IIFEs (ie. those that use the `yield` keyword) will automatically flush to an array Eg. 
 ```coffeescript
-oneToTen = (#) -> for(x = 1 to 10) yield x`
+oneToTen = (#) -> for(x = 1 to 10) yield x
 ```
 
 ### Automatic function prefix creation and promise function shorthand
