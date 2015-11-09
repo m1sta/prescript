@@ -24,7 +24,7 @@ get (url) ~> if(true) resolve(data) else reject("Error")
 ```
 
 ### Skinny arrows, hoisting, and function assignment shorthand
-Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. The shorthand function declaration feature means that use of the equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`. Shorthand can also be used when passing an anonymous function as arguments during function invocation too Eg. `doubles = singles.map(token) -> token * 2`. Any arguments to the anonymous function that have not yet been declared will be considered parameters for the new anonymous function.
+Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. The shorthand function declaration feature means that use of the equals sign during function definition and assignment is optional. Eg. `obj.prop -> fnBody`.
 
 ### Postfix scope blocks using asterix and where
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. The asterix character when combined with equals sign provides a simpler anonymous form of this Eg.  `console.log(*) = "Hello World"`
@@ -55,7 +55,7 @@ Lists of colon delimited pairs are wrapped in curly brackets `{}` when used in d
 Deep properties of an object can be extracted without fear of `cannot read property of undefined` by placing a single question mark at the end of a property list. eg. `a.b.c.d?`. A new `?=` operator sets variables to a value only if that variable is not currently `undefined` Eg. `myArg ?= 10`.
 
 ### Cast operator for tags, macros, and embedded dsls
-Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below which are used to define a tag or macro, and the cast operator `::` in the example below. The `::` operator can also be used for expression typecasting with a static type checker like Flow or Typescript Eg. `x = number :: getResult()` . 
+Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below which are used to define a tag or macro, and the cast operator `::` in the example below. The `::` operator can also be used for expression typecasting with a static type checker like Flow or Typescript Eg. `x = string :: getResult()` . 
 
 ```coffeescript
 macroExample ->
@@ -75,9 +75,9 @@ macroExample ->
 	query = sql :: select * from table1
 	result = await promisify :: http.request(options)
 ```
-An important additional benefit of the `::` operator is that it can be used by IDEs and static processors to help identify how to colour and validate embedded non-javascript syntax (think of it a little like a file extension but for a string expression). Where necessary, typescript/flow-style types can be defined using the standard type syntax Eg. `type callback = (error:boolean, result:string) -> void`.
+An important additional benefit of the `::` operator is that it can be used by IDEs and static processors to help identify how to colour and validate embedded non-javascript syntax (think of it a little like a file extension but for a string expression). Where necessary, new typescript/flow-style types can be defined using the standard type syntax Eg. `type callback = (error:boolean, result:string) -> void` or using the cast operator Eg. `type callback = (boolean :: error, string :: result) -> void`.
 
-### For loops accessing both key and value, and a 'to' keyword for ranges
+### For loops access both key and value, and a 'to' keyword for ranges
 For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`. The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
 
 ### Result chaining
