@@ -27,7 +27,7 @@ get (url) ~> if(true) resolve(data) else reject("Error")
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. The asterix character when combined with equals sign provides a simpler anonymous form of this Eg.  `console.log(*) = "Hello World"`
 
 ### Skinny arrows, hoisting, and function assignment shorthand
-Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. Shorthand function assignment means you can drop the `=` when assigning an anonymous function with no parameters to an object property or variable. Eg. `obj.prop -> fnBody`. 
+Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. Shorthand function assignment means you can drop the `=` when assigning an anonymous function with no parameters to an object property or variable. Eg. `hoistedFn(params) -> fnBody` or more comparably `obj.prop -> fnBody`. 
 
 ~~Shorthand function assignment also works when invoking functions too. In this final case the parameters included within any presented parentesis will be considered arguments for an anonymous function which should be passed as the only input to the function being invoked Eg. `obj.createServer(err) -> if(err) throw err` is equivalent to `obj.createServer(*) = (err) -> if(err) throw err` (see below).~~
 
