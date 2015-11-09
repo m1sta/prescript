@@ -1,6 +1,6 @@
 #example server using hapi and prescript
 default const
-require :: hapi, redis, inert, consoleLogger as log
+require :: hapi, redis, inert, log
 
 server = new hapi.server(host: 'localhost', port: 8000)
 await server.register(inert) catch (err.registrationFailure)
