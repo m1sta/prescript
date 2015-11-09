@@ -1,4 +1,5 @@
 #example server using hapi and prescript
+default const
 require :: hapi, redis, inert, consoleLogger as log
 
 server = new hapi.server(host: 'localhost', port: 8000)
