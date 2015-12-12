@@ -61,7 +61,6 @@ Macros and string template 'tags' can be defined with near-identical syntax. The
 macroExample ->
 	#the only difference between macros and tags are that macros run at compile time
 	macro require = (strings) -> strings[0].split(",").map(token) -> `var ${token} = require(${token})\n`
-	tag graph, formula = (strings, values) -> strings.join("")
 	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
 	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
 
