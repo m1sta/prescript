@@ -20,7 +20,7 @@ oneToTen = (#) -> for(x = 1 to 10) yield x
 The `*` (the generator function marker) and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(function(resove,reject){})`. eg.
 
 ```coffeescript
-get (url) ~> if(true) resolve(data) else reject("Error")
+get (url) ~> if(true) resolve(data) else reject(error)
 ```
 
 ### Skinny arrows, hoisting, and function assignment shorthand
