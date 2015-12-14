@@ -64,10 +64,11 @@ Deep properties of an object can be extracted without fear of `cannot read prope
 Macros and string template 'tags' can be defined with near-identical syntax. The former are processed at compile and inlined. Note the `macro`, `tag` keywords below which are used to define a tag or macro, and the cast operator `::` in the example below. The `::` operator can also be used for expression typecasting with a static type checker like Flow or Typescript Eg. `x = string :: getResult()` . 
 
 ```coffeescript
-macroExample ->
-	require :: express, esprima, redis
+castOperatorExamples ->
+	require :: express, esprima, redis # this is an example of a macro
+	output.name = string :: input.name
 	graph = graph :: a -> b
-	constraints.push(formula :: a + b ** 2)
+	constraints.push(formula :: a + b ** 2) # compile time process can convert his to an algebraic data structure
 	document.render() = jsx :: <span><b>{username} says</b>: {message}</span>
 	title.setAttribute('text') = i8n :: "Hello {{username}}" #quotes are optional
 	query = sql :: select * from table1
