@@ -79,10 +79,14 @@ castOperatorExamples ->
 	query = sql :: select * from table1
 	result = await promisify :: http.request(options)
 ```
-An important additional benefit of the `::` operator is that it can be used by IDEs and static processors to help identify how to colour and validate embedded non-javascript syntax (think of it a little like a file extension but for a string expression). Where necessary, new typescript/flow-style types can be defined using the standard type syntax Eg. `type callback = (error:boolean, result:string) -> void` or using the cast operator Eg. `type callback = (boolean :: error, string :: result) -> void`.
+An important additional benefit of the `::` operator is that it can be used by IDEs and static processors to help identify how to colour and validate embedded non-javascript syntax (think of it a little like a file extension but for a string expression). Types can be defined using the standard type typescript/flow syntax Eg. `type callback = (error:boolean, result:string) -> void` or through use  of the cast operator.
+
+```coffeescript
+type callback = (boolean :: error, string :: result) -> void
+```
 
 ### For loops access both key and value, and a 'to' keyword for ranges
-For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`. The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
+For-in loops can be defined to extract both key and value at the same time by providing a second variable name when the loop is declared. Similarly, a third variable name allows the index to be captured. This feature exists to reduce confusion between for-of and for-in. Eg. `for (key, value in dict)`. The `to` keyword can be used to define standard for loops. Eg. `for (x = 0 to array.length)`
 
 ### Result chaining
 The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`.
