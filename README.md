@@ -24,7 +24,12 @@ get (url) ~> if(true) resolve(data) else reject(error)
 ```
 
 ### Skinny arrows, hoisting, and function assignment shorthand
-Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. Shorthand function assignment means you can exclude the assignment character (`=`) when assigning an anonymous function to property or variable. Eg. `hoistedFn -> fnBody` or `obj.prop(arg1, arg2) => fnBody`.
+Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. Shorthand function assignment means you can exclude the assignment character (`=`) when assigning an anonymous function to property or variable. 
+
+```coffeescript
+hoistedFn -> fnBody
+obj.prop(arg1, arg2) => fnBody
+```
 
 ### Postfix scope blocks
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. This is most useful where a function has a complex call signature.
@@ -83,7 +88,7 @@ For-in loops can be defined to extract both key and value at the same time by pr
 The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`.
 
 ### Inline tests and documentation using the `describe` keyword
-The `expect` keyword has been proposed as a block structure containing information relevant only at development time. This includes textual descriptions of functions and inline unit tests. This feature is not currently in development but is being considered.
+The `describe` keyword has been proposed as a block structure containing information relevant only at development time. This includes textual descriptions of functions and inline unit tests. This feature is not currently in development but is being considered.
 
 ```coffeescript
 	#Reference example
