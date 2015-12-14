@@ -32,9 +32,7 @@ obj.prop(arg1, arg2) => fnBody
 ```
 
 ### Postfix scope blocks
-Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. This is most useful where a function has a complex call signature.
-
-Another posfix option simply uses the assignment character (`=`) a function invocation on the left-hand-side Eg. `console.log() = "Hello World"`. In these situations, the right-hand-side will be passed as an additional argument to the function when it is exected. To pass the right-hand-side as an argument in a specific position, use the asterix character Eg. `setTimeout(*, 1000) => alert("Hello")`. 
+Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. This is most useful where a function has a complex call signature. Another posfix option simply uses the assignment character (`=`) but with a function invocation on the left-hand-side Eg. `console.log() = "Hello World"`. In this situation, the right-hand-side will be passed as an additional argument to the function when it is invoked. To pass the right-hand-side as an argument in a specific position, use the asterix character Eg. `setTimeout(*, 1000) => alert("Hello")`. 
 
 ```coffeescript
 router.get('/path') = (req, res) => res.end("Done")
