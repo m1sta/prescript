@@ -66,7 +66,7 @@ Macros and string template 'tags' can be defined with near-identical syntax. The
 ```coffeescript
 castOperatorExamples ->
 	require :: express, esprima, redis # this is an example of a macro
-	output.name = string :: input.name
+	let realname = string :: input.name # this will resut in a typescript/flow type annotation on "realname"
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2) # compile time process can convert his to an algebraic data structure
 	document.render(content) where content = jsx :: <span><b>{username} says</b>: {message}</span>
