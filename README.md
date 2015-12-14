@@ -35,7 +35,7 @@ Another posfix option simply uses the assignment character (`=`) a function invo
 router.get('/path') = (req, res) => res.end("Done")
 ```
 
-### Automatic variable declaration
+### Optional automatic variable declaration
 Variables can be set to automatically be defined within the scope that they are first used, using either var, let, or const. This can be configured to only apply to variables defined in loop declarations and catch statements. It is recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables. Eg. `default const`. Automatic variable declaration can also be switched off for a scope using `default undefined`.
 
 ### Block bounded multi-line array definition
