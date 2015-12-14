@@ -68,7 +68,7 @@ castOperatorExamples ->
 	require :: express, esprima, redis # this is an example of a macro
 	let realname = string :: input.name # this will resut in a typescript/flow type annotation on "realname"
 	graph = graph :: a -> b
-	constraints.push(formula :: a + b ** 2) # compile time process can convert his to an algebraic data structure
+	constraints.push(formula :: a + b ** 2) # compile time macro may convert this to an object literal representing the function
 	document.render(content) where content = jsx :: <span><b>{username} says</b>: {message}</span>
 	title.setAttribute('text') = i8n :: "Hello {{username}}" #quotes are optional
 	query = sql :: select * from table1
