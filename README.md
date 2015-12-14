@@ -69,7 +69,7 @@ castOperatorExamples ->
 	output.name = string :: input.name
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2) # compile time process can convert his to an algebraic data structure
-	document.render() = jsx :: <span><b>{username} says</b>: {message}</span>
+	document.render(content) where content = jsx :: <span><b>{username} says</b>: {message}</span>
 	title.setAttribute('text') = i8n :: "Hello {{username}}" #quotes are optional
 	query = sql :: select * from table1
 	result = await promisify :: http.request(options)
