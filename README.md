@@ -29,7 +29,11 @@ Skinny arrow functions are simply shorthand for the standard function keyword. T
 ### Postfix scope blocks
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. This is most useful where a function has a complex call signature.
 
-Another posfix option simply uses the assignment character (`=`) a function invocation on the left-hand-side Eg. `console.log() = "Hello World"`. In these situations, the right-hand-side will be passed as an additional argument to the function when it is exected. To pass the right-hand-side as an argument in a specific position, use the asterix character Eg. `setTimeout(*, 1000) => alert("Hello")`. Another common pattern where this is useful is `router.get('/path') = (req, res) => res.end("Done")`.
+Another posfix option simply uses the assignment character (`=`) a function invocation on the left-hand-side Eg. `console.log() = "Hello World"`. In these situations, the right-hand-side will be passed as an additional argument to the function when it is exected. To pass the right-hand-side as an argument in a specific position, use the asterix character Eg. `setTimeout(*, 1000) => alert("Hello")`. 
+
+```coffeescript
+router.get('/path') = (req, res) => res.end("Done")
+```
 
 ### Automatic variable declaration
 Variables can be set to automatically be defined within the scope that they are first used, using either var, let, or const. This can be configured to only apply to variables defined in loop declarations and catch statements. It is recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables. Eg. `default const`. Automatic variable declaration can also be switched off for a scope using `default undefined`.
