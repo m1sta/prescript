@@ -23,11 +23,11 @@ The `*` (the generator function marker) and `async` will automatically be includ
 get (url) ~> if(true) resolve(data) else reject("Error")
 ```
 
-### Postfix scope blocks using asterix and where
-Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. The asterix character when combined with equals sign provides a simpler anonymous form of this Eg.  `console.log(*) = "Hello World"`
-
 ### Skinny arrows, hoisting, and function assignment shorthand
 Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. Shorthand function assignment means you can drop the assignment character (`=`) when assigning an anonymous function to property or variable. Eg. `hoistedFn -> fnBody` or `obj.prop(arg1, arg2) => fnBody`.
+
+### Postfix scope blocks
+Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. The assignment character can now be used with a function invocation on the left-hand-side Eg. `console.log() = "Hello World"`. In these situations, the right-hand-side will be passed as an additional argument to the function when it is exected. To pass the right-hand-side as an argument in a specific position, use the asterix character Eg. `setTimeout(*, 1000) => alert("Hello")`.
 
 ### Automatic variable declaration
 Variables can be set to automatically be defined within the scope that they are first used, using either var, let, or const. This can be configured to only apply to variables defined in loop declarations and catch statements. It is recommended to use semantic-colouring in your IDE if you have this feature enabled for cover all variables. Eg. `default const`. Automatic variable declaration can also be switched off for a scope using `default undefined`.
