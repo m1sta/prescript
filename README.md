@@ -86,18 +86,18 @@ The result of one expression can be automatically passed to another expression b
 The `expect` keyword has been proposed as a block structure containing information relevant only at development time. This includes textual descriptions of functions and inline unit tests. This feature is not currently in development but is being considered.
 
 ```coffeescript
-	//Reference example
+	#Reference example
 	addThree(number :: input) -> return input + 3
 	describe addThree
-		purpose: Add three to a provided number
-		input: Any value or object that can contains a valueOf() function
+		purpose: "Add three to a provided number"
+		input: "Any value or object that can contains a valueOf() function"
 		tests: addThree(4) == 7
 	
-	//Self-contained example
+	#Self-contained example, useful for anonymous functions
 	addFour(input) ->
 		describe
-			purpose: Add four to a provided number
-			input: Any value or object that can contains a valueOf() function
+			purpose: "Add four to a provided number"
+			input: "Any value or object that can contains a valueOf() function"
 			tests: addThree(4) == 8
 		return input + 4
 ```
