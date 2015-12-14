@@ -65,18 +65,11 @@ Macros and string template 'tags' can be defined with near-identical syntax. The
 
 ```coffeescript
 macroExample ->
-	#the only difference between macros and tags are that macros run at compile time
-	macro require = (strings) -> strings[0].split(",").map(token) -> `var ${token} = require(${token})\n`
-	tag jsx {*} = (strings, values) -> strings.map(token) -> values[token] || token
-	tag i8n {{*}} = (strings, values, tokens) -> translations[config.language][strings.join("")].replaceAll(tokens, values)
-
 	require :: express, esprima, redis
 	graph = graph :: a -> b
 	constraints.push(formula :: a + b ** 2)
-	console.log(*) = jsx :: <span><b>{username} says</b>: {message}</span>
-	console.log(*) = i8n :: "Hello {{username}}" #quotes are optional
-	
-	import {sql, promisify} from 'utils'
+	document.render() = jsx :: <span><b>{username} says</b>: {message}</span>
+	title.setAttribute('text') = i8n :: "Hello {{username}}" #quotes are optional
 	query = sql :: select * from table1
 	result = await promisify :: http.request(options)
 ```
@@ -88,7 +81,22 @@ For-in loops can be defined to extract both key and value at the same time by pr
 ### Result chaining
 The result of one expression can be automatically passed to another expression by combining the `>>` operator and asterix `*` characters. eg. `score = await db.get(input) >> JSON.parse(*) >> parseInt(*.value) / 100`.
 
-### Expect keyword
-The `expect` keyword has been proposed to define a block structure containing information relevant at development time. This includes function parameter types, function return types, and textual descriptions of actions, and tests themselves. This feature is not currently in development but is being considered.
+### Inline tests and documentation using the `describe` keyword
+The `expect` keyword has been proposed as a block structure containing information relevant only at development time. This includes textual descriptions of functions and inline unit tests. This feature is not currently in development but is being considered.
+
+```coffeescript
+	addThree(number :: input) -> return input + 3
+	describe addThree
+		purpose: Add three to a provided number
+		input: Any value or object that can contains a valueOf() function
+		tests: addThree(4) == 7
+		
+	addFour(input) ->
+		describe
+			purpose: Add four to a provided number
+			input: Any value or object that can contains a valueOf() function
+			tests: addThree(4) == 8
+		return input + 4
+```
 
 Prescript is pre-alpha and not ready for usage in any context. Pull requests and other contributions welcome.
