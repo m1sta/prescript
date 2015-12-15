@@ -14,8 +14,11 @@ Functions declarations containing variables marked with a `#` will be automatica
 oneToTen = (#) -> for(x = 1 to 10) yield x
 ```
 
+### ES6/7 destructuring and await
+All valid ES6 is valid including array and object destructuring, object creation shorthand, await, and yield. By default babel is used in loose mode to make everything ES5 compatible. This is, however, configurable.
+
 ### Automatic function prefix creation and promise function shorthand
-The `*` (the generator function marker) and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in a `new Promise(function(resove,reject){})`. eg.
+The `*` (the generator function marker) and `async` will automatically be included as a prefixes to function declarations where the keywords `yield` and `await` are found within a function body. This feature also allows you to notionaly use arrow function syntax while creating async and generator functions. Functions defined using the tilde-arrow `~>` will automatically be wrapped in `new Promise(function(resove,reject){})`. eg.
 
 ```coffeescript
 get (url) ~> if(true) resolve(data) else reject(error)
