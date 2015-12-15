@@ -6,7 +6,7 @@ Prescript is a framework for running macros over code that will eventually becom
 Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. Any valid javascript is acceptable in a prescript file without modification. When you decide you want to make use of a Prescript macro, just start using them, one at a time - you don't need to make any bold efforts to learn learn and transition to a new language.
 
 ### Bracket free block and automatic semi-colon insertion
-Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to.
+Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to. If you want it to look like Javascript or C that's fine too.
 
 ### IIFE generation
 Functions declarations containing variables marked with a `#` will be automatically wrapped in an IIFE ensuring a closure is created around the `#` marked parameters. Eg  `fn = (intParam, #extParam) -> body`. Simple IIFEs can also be generated using the `(#) -> doImmediately()` syntax. Simple generator IIFEs (ie. those that use the `yield` keyword) will automatically flush to an array Eg. 
