@@ -25,8 +25,10 @@ get (url) ~> if(true) resolve(data) else reject(error)
 Skinny arrow functions are simply shorthand for the standard function keyword. They'll be translated into hoisted function declarations if assigned directly to a variable defined in the current scope. Eg. `hoistedFn = (params) -> fnBody`. Shorthand function assignment means you can exclude the assignment character (`=`) when assigning an anonymous function to property or variable. 
 
 ```coffeescript
-hoistedFn -> fnBody
-obj.prop(arg1, arg2) => fnBody
+hoistedFn -> fnBody #create a hoisted function declaration with no parameters
+obj.prop => fnBody #create a bound function with no parameters
+obj.prop = (x, y) => fnBody #create a  bound function with two parameters
+list.map(item => item * 2) #create an anonymous function with one parameter
 ```
 
 ### Postfix scope blocks
