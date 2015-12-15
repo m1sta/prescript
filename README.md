@@ -5,8 +5,6 @@ Prescript is a framework for running macros over code that will eventually becom
 
 Prescript does its best not to touch any code that does not explicitly match a defined macro pattern. Any valid javascript is acceptable in a prescript file without modification. When you decide you want to make use of a Prescript macro, just start using them, one at a time - you don't need to make any bold efforts to learn learn and transition to a new language.
 
-![Example](demo/example1.png)
-
 ### Bracket free block and automatic semi-colon insertion
 Whitespace defined blocks are wrapped in curly brackets `{}` if they were left out. The result is that the code looks a little Python, Ruby, or well written Coffeescript, if you want it to.
 
