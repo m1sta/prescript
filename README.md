@@ -38,7 +38,11 @@ list.map(item => item * 2) #create an anonymous function with one parameter
 Code blocks to be run immediatley before an assignment or function invocation can be defined after the assignment or function invocation. Eg.  `x = add(a, 10) where a = multiply(3,7)`. This is useful where a function has a complex call signature or for grouping multiple statements in a block and providing context to that block. Another posfix option simply uses the assignment character (`=`) but with a function invocation on the left-hand-side Eg. `console.log() = "Hello World"`. In this situation, the right-hand-side will be passed as an additional argument to the function when it is invoked. To pass the right-hand-side as an argument in a specific position, use the asterix character Eg. `setTimeout(*, 1000) => alert("Hello")`. 
 
 ```coffeescript
+# each of the following are functionally identical
 router.get('/path') = (req, res) => res.end("Done")
+router.get('/path', *) = (req, res) => res.end("Done")
+router.get('/path', handler) where handler = (req, res) => res.end("Done")
+router.get('/path', (req, res) => res.end("Done"))
 ```
 
 ### Optional automatic variable declaration
@@ -73,7 +77,7 @@ Macros and string template 'tags' can be defined with near-identical syntax. The
 castOperatorExamples ->
 	require :: express, esprima, redis # this is an example of a macro
 	let realname = string :: input.name # this will resut in a typescript/flow type annotation on "realname"
-	graph = graph :: a -> b
+	graph = graph :: a -> b # detect when to terminate string expressions using smart rules (newline, comment, parens, block)
 	constraints.push(formula :: a + b ** 2) # compile time macro may convert this to an object literal representing the function
 	document.render(content) where content = jsx :: <span><b>{username} says</b>: {message}</span>
 	title.setAttribute('text') = i8n :: "Hello {{username}}" #quotes are optional
